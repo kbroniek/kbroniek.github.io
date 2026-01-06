@@ -1,14 +1,49 @@
 <html>
 
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		span {
+			font-size: x-large;
+		}
+
+		@media (max-width: 600px) {
+			span {
+				font-size: 30px;
+			}
+		}
+	</style>
+	<script>
+		function mojaFunkcja() {
+			debugger;
+			const rozwijacz = document.getElementById("rozwijacz");
+			if (rozwijacz.textContent === "rozwiń") {
+				rozwijacz.textContent = "zwiń"
+
+				document.querySelectorAll("details").forEach(d => {
+					d.open = true;
+				})
+			}
+			else if (rozwijacz.textContent === "zwiń") {
+				rozwijacz.textContent = "rozwiń"
+
+
+				document.querySelectorAll("details").forEach(d => {
+					d.open = false;
+				})
+			}
+
+		}
+	</script>
 	<title>
 		Cytat na każdy dzień
 	</title>
 </head>
 
 <body>
+	<button id="rozwijacz" onclick="mojaFunkcja()">rozwiń</button>
 	<h1>Cytat na każdy dzień 2026</h1>
-	<span style="font-size: x-large">
+	<span>
 		<details>
 			<summary>Styczeń</summary>
 			<p>
